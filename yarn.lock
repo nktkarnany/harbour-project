@@ -6367,6 +6367,11 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
+rupture@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/rupture/-/rupture-0.7.1.tgz#d51bcd5fe93757b4855e4ea70ac9d97a897183a1"
+  integrity sha512-rvmUnVep/g7iHwGRMofn41crEHmNVDCsUp3Ws0NDsX7c5CHC7RRU0HsWrKnsY5qv0D3dQ6LjQBqxy+rL976OWQ==
+
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
@@ -6388,6 +6393,11 @@ safe-regex@^1.1.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
+
+sanitize.css@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/sanitize.css/-/sanitize.css-11.0.0.tgz#29bb394c0543616f31cd8c58fcba8323a60e2ef6"
+  integrity sha512-Ox0X2lk0kOGeODJgT9S9HFv0j5Cz89ir9ILylj62/vejHPdMmahmetfocoQwyiAnseeXyDa+KIbO6ZQJe5n2Lg==
 
 sax@^1.2.4, sax@~1.2.4:
   version "1.2.4"
