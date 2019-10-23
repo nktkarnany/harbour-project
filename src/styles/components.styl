@@ -1,0 +1,125 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: Lato-Reg;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+
+    .aside {
+        flex: 0 0 400px;
+        box-shadow: inset 0 0 10px rgba(255, 193, 7, 1);
+
+        &__header {
+            padding: 20px;
+            background-color: alpha(#dedede, 0.3);
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                font-family: Mont-Reg;
+            }
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                width: 100%;
+                padding: 15px 20px;
+                text-align: center;
+                cursor: pointer;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                &:hover {
+                    background-color: alpha(#dedede, 0.5);
+                }
+
+                span.line {
+                    width: 0;
+                    height: 2px;
+                    background-color: black;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    .main-section {
+        flex: 1;
+        background-color: rgba(255, 193, 7, 1);
+        position: relative;
+
+        .aside-toggle {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 68px;
+            left: 30px;
+            cursor: pointer;
+
+            .bar {
+                display: inline-block;
+                width: 26px;
+                height: 4px;
+                background-color: alpha(#ffffff, 0.5);
+                margin-bottom: 3px;
+            }
+
+            // &.close {
+
+            //     left: -56px;
+                
+            //     .bar {
+            //         background-color: rgba(255, 193, 7, 1);
+
+            //         &-top {
+            //             transform: rotate(45deg);
+            //             transform-origin: left center;
+            //         }
+
+            //         &-bottom {
+            //             transform: translate(0, 4px) rotate(-45deg);
+            //             transform-origin: left center;
+            //         }
+                    
+            //         &-middle {
+            //             width: 0;
+            //         }
+            //     }
+
+            // }
+        }
+    }
+}
+
+.footer {
+    height: 100px;
+    padding: 20px;
+    display: none;
+}
