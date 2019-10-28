@@ -75,7 +75,7 @@ $(function () {
 
         TweenMax.to(".main-section", 0.5, {
             backgroundColor: COLOR[dataColor]
-        });
+        }).delay(0.6);
 
     });
 

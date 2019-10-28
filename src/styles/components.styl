@@ -40,12 +40,26 @@ a {
                         background-size: 16px 16px;
             height: 200px;
             display: flex;
-            justify-content: center;
             align-items: center;
 
             h1 {
                 font-family: Mont-Reg;
                 color: rgba(255, 255, 255, 0.5);
+                white-space: nowrap;
+                margin: 0 auto;
+                letter-spacing: .15em;
+                display: flex;
+
+                .firstname {
+                    overflow: hidden;
+                    display: inline-block;
+                    width: 28px;
+                    transition: width 1s ease;
+                }
+
+                &:hover .firstname {
+                    width: 112px;
+                }
             }
         }
 
