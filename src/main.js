@@ -7,7 +7,7 @@ $(function () {
 
     $(".aside__container a").hover(function (e) {
         TweenMax.to(e.target, 0.3, {
-            color: '#ff0000'
+            color: '#000000'
         });
         TweenMax.to(e.target.firstElementChild, 0.3, {
             width: '10px'

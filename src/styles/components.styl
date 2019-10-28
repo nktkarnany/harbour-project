@@ -8,18 +8,16 @@ body {
 
 ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
     text-decoration: none;
-}
 
-.header {
-    height: 100px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    display: none;
+    &:visited {
+        color: #000;
+    }
 }
 
 .main-container {
@@ -29,10 +27,13 @@ a {
     .aside {
         flex: 0 0 400px;
         box-shadow: inset 0 0 10px rgba(255, 193, 7, 1);
+        position: relative;
 
         &__header {
             padding: 20px;
-            background-color: alpha(#dedede, 0.3);
+            background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+            background-color: #131313;
+            background-size: 20px 20px;
             height: 150px;
             display: flex;
             justify-content: center;
@@ -40,6 +41,7 @@ a {
 
             h1 {
                 font-family: Mont-Reg;
+                color: rgba(255, 255, 255, 0.5);
             }
         }
 
@@ -49,12 +51,16 @@ a {
 
             a {
                 width: 100%;
-                padding: 15px 20px;
+                padding: 20px;
                 text-align: center;
                 cursor: pointer;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
+
+                &.active {
+                    background-color: rgba(#aeaeae, 0.3);
+                }
 
                 &:hover {
                     background-color: alpha(#dedede, 0.5);
@@ -67,6 +73,15 @@ a {
                     margin-right: 10px;
                 }
             }
+        }
+
+        &__footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            color: #aeaeae;
         }
     }
 
@@ -90,36 +105,29 @@ a {
                 background-color: alpha(#ffffff, 0.5);
                 margin-bottom: 3px;
             }
+        }
 
-            // &.close {
+        .main-footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            color: #aeaeae;
+            padding: 0 30px;
 
-            //     left: -56px;
-                
-            //     .bar {
-            //         background-color: rgba(255, 193, 7, 1);
+            .social-media {
+                display: flex;
+                justify-content: flex-end;
 
-            //         &-top {
-            //             transform: rotate(45deg);
-            //             transform-origin: left center;
-            //         }
+                li {
+                    padding-left: 30px;
 
-            //         &-bottom {
-            //             transform: translate(0, 4px) rotate(-45deg);
-            //             transform-origin: left center;
-            //         }
-                    
-            //         &-middle {
-            //             width: 0;
-            //         }
-            //     }
-
-            // }
+                    a {
+                        color: rgba(255, 255, 255, 0.75);
+                    }
+                }
+            }
         }
     }
-}
-
-.footer {
-    height: 100px;
-    padding: 20px;
-    display: none;
 }
