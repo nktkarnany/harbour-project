@@ -42,11 +42,19 @@ $(function () {
             toggleAnimation.topBar.play();
             toggleAnimation.middleBar.play();
             toggleAnimation.bottomBar.play();
+
+            // TweenMax.to(".aside", 0.5, {
+            //     marginLeft: "0px"
+            // });
         } else {
             toggleAnimation.whole.reverse();
             toggleAnimation.topBar.reverse();
             toggleAnimation.middleBar.reverse();
             toggleAnimation.bottomBar.reverse();
+
+            // TweenMax.to(".aside", 0.2, {
+            //     marginLeft: "-400px"
+            // }).delay(0.6);
         }
 
     });
@@ -77,13 +85,38 @@ $(function () {
             backgroundColor: COLOR[dataColor]
         }).delay(0.6);
 
-        const bubble = ".main-section .main-content .chat .bubble";
+        // const bubble = ".main-section .main-content .chat .bubble";
 
-        const chat_tl = new TimelineMax();
-        chat_tl.from(bubble, 1, { x: "50vw"}, 0);
-        chat_tl.from(bubble, 1, { skewX: -20, ease: Elastic.easeOut.config(1.75, 0.1) }, 1);
-        chat_tl.fromTo(bubble, 0.1, { borderTopLeftRadius: "2em", ease: Power4.easeOut }, { borderTopLeftRadius: "0.1em", ease: Power4.easeOut }, 1);
+        // const chat_tl = new TimelineMax();
+        // chat_tl.from(bubble, 1.2, { x: "65vw", ease: Power4.easeOut }, 0.3);
+        // chat_tl.from(bubble, 1, { skewX: -20, ease: Elastic.easeOut.config(1.3, 0.2) }, 1);
+        // chat_tl.fromTo(bubble, 0.1, { borderTopLeftRadius: "1.6em", ease: Power4.easeOut }, { borderTopLeftRadius: "0.1em", ease: Power4.easeOut }, 1);
 
     });
+
+    // Footer hover animation
+    $(".social-media li a").hover(function (e) {
+        TweenMax.to(e.currentTarget, 0.3, {
+            color: "rgba(255, 255, 255, 1)"
+        });
+    }, function (e) {
+        TweenMax.to(e.currentTarget, 0.3, {
+            color: "rgba(255, 255, 255, 0.6)"
+        })
+    });
+
+    addBubble("Hi! I am Ankit, I am a front end web developer.");
+
+    function addBubble(text) {
+        const bubble = $("<div></div>");
+        bubble.addClass("bubble");
+        bubble.text(text);
+        $(".chat").append(bubble);
+
+        const chat_tl = new TimelineMax();
+        chat_tl.from(bubble, 1.2, { x: "65vw", ease: Power4.easeOut }, 0.3);
+        chat_tl.from(bubble, 1, { skewX: -20, ease: Elastic.easeOut.config(1.3, 0.2) }, 1);
+        chat_tl.fromTo(bubble, 0.1, { borderTopLeftRadius: "1.6em", ease: Power4.easeOut }, { borderTopLeftRadius: "0.1em", ease: Power4.easeOut }, 1);
+    }
 
 });
