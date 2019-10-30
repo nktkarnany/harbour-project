@@ -1,7 +1,7 @@
 import "./styles/main.styl";
 
 import $ from "jquery";
-import { TweenMax, TimelineLite, Power2, Elastic, CSSPlugin } from "gsap/TweenMax";
+import { TweenMax, Elastic, TimelineMax } from "gsap/TweenMax";
 
 $(function () {
 
@@ -76,6 +76,13 @@ $(function () {
         TweenMax.to(".main-section", 0.5, {
             backgroundColor: COLOR[dataColor]
         }).delay(0.6);
+
+        const bubble = ".main-section .main-content .chat .bubble";
+
+        const chat_tl = new TimelineMax();
+        chat_tl.from(bubble, 1, { x: "50vw"}, 0);
+        chat_tl.from(bubble, 1, { skewX: -20, ease: Elastic.easeOut.config(1.75, 0.1) }, 1);
+        chat_tl.fromTo(bubble, 0.1, { borderTopLeftRadius: "2em", ease: Power4.easeOut }, { borderTopLeftRadius: "0.1em", ease: Power4.easeOut }, 1);
 
     });
 

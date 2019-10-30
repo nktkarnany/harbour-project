@@ -49,17 +49,18 @@ a {
                 margin: 0 auto;
                 letter-spacing: .15em;
                 display: flex;
+                font-size: 2.5em;
 
                 .firstname {
                     overflow: hidden;
                     display: inline-block;
-                    width: 28px;
+                    width: 14px;
                     transition: width 1s ease;
                 }
+            }
 
-                &:hover .firstname {
-                    width: 112px;
-                }
+            &:hover h1 .firstname {
+                width: 140px;
             }
         }
 
@@ -167,6 +168,10 @@ a {
             }
         }
 
+        .main-content {
+            margin: 150px 30px 50px 30px;
+        }
+
         .main-footer {
             position: absolute;
             bottom: 0;
@@ -190,4 +195,35 @@ a {
             }
         }
     }
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+    width: 75%;
+    margin: 0 auto;
+    font-family: Mont-Reg;
+
+    .persona {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        background-image: url('../assets/boy.svg');
+        background-size: cover;
+    }
+
+    .bubble {
+        align-self: flex-start;
+        color: #777;
+        padding: 0.8em 0.6em;
+        max-width: 60%;
+        border-radius: 0.5em;
+        background-color: #fff;
+        margin-bottom: 20px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        border-top-left-radius: 0.1em;
+        transform-origin: bottom;
+        transform: skewX(0);
+    }    
 }
