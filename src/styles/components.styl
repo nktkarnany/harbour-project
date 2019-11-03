@@ -63,12 +63,12 @@ a {
             width: 100%;
             height: 100%;
             background-color: transparent;
-            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             overflow: hidden;
             will-change: transform;
+            display: none;
 
             .circle {
                 border-radius: 50%;
@@ -86,6 +86,7 @@ a {
             }
 
             &.active {
+                display: flex;
                 transform: translateY(0%);
                 animation: SlideUp 2s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -214,6 +215,7 @@ a {
     from {
         opacity: 0;
     }
+
     to {
         display: flex;
         opacity: 1;
@@ -236,14 +238,15 @@ a {
         border-bottom-right-radius: 0.2em;
         margin-bottom: 20px;
         position: relative;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
         &:before, &:after {
             content: '';
             position: absolute;
             top: 25%;
             width: 12px;
-            height: 12px;
-            border-radius: 12px;
+            height: 20px;
+            border-radius: 50%;
             background-color: rgb(60, 61, 71);
         }
 
@@ -254,6 +257,38 @@ a {
         &:after {
             left: 60%;
         }
+
+        .mouth {
+            position: absolute;
+            bottom: 20%;
+            left: 38%;
+            width: 22px;
+            height: 10px;
+            border: 2px solid rgb(60, 61, 71);
+            border-radius: 50%;
+            border-color: transparent transparent rgb(60, 61, 71) transparent;
+            transition: width 0.2s ease-out, left 0.2s ease-out;
+
+            &.talking {
+                animation: talking 0.8s ease infinite;
+            }
+
+            @keyframes talking {
+                from {
+                    border-width: 2px;
+                }
+
+                to {
+                    border-width: 3px;
+                }
+            }
+        }
+    }
+
+    &:hover .mouth {
+        width: 30px;
+        left: 33%;
+        animation-play-state: paused;
     }
 
     .bubble {
@@ -269,5 +304,43 @@ a {
         border-top-left-radius: 0.1em;
         transform-origin: bottom;
         transform: skewX(0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        top: 0px;
+    }
+
+    100% {
+        top: 5px;
+    }
+}
+
+.bouncing-loader {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 70px;
+
+    div {
+        width: 10px;
+        height: 10px;
+        background-color: rgb(60, 61, 71);
+        border-radius: 50%;
+        margin: 0.2rem;
+        position: relative;
+        animation-name: bounce;
+        animation-duration: 0.6s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease;
+
+        &:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 0.4s;
+        }
     }
 }

@@ -29,6 +29,7 @@ $(function () {
             toggleAnimation.middleBar.play();
             toggleAnimation.bottomBar.play();
 
+            // $(".main-menu").removeClass("in-active");
             $(".main-menu").addClass("active");
         } else {
             toggleAnimation.topBar.reverse();
@@ -36,6 +37,7 @@ $(function () {
             toggleAnimation.bottomBar.reverse();
 
             $(".main-menu").removeClass("active");
+            // $(".main-menu").addClass("in-active");
         }
     });
 
@@ -50,8 +52,6 @@ $(function () {
         })
     });
 
-    addBubble("Hi! I am Ankit, I am a front end web developer.");
-
     function addBubble(text) {
         const bubble = $("<div></div>");
         bubble.addClass("bubble");
@@ -63,5 +63,68 @@ $(function () {
         chat_tl.from(bubble, 1, { skewX: -20, ease: Elastic.easeOut.config(1.3, 0.2) }, 1);
         chat_tl.fromTo(bubble, 0.1, { borderTopLeftRadius: "1.6em", ease: Power4.easeOut }, { borderTopLeftRadius: "0.1em", ease: Power4.easeOut }, 1);
     }
+
+    function addLoader() {
+        const loader = $("<div></div>");
+        loader.addClass("bouncing-loader");
+        loader.append("<div></div>");
+        loader.append("<div></div>");
+        loader.append("<div></div>");
+        $(".chat").append(loader);
+    }
+
+    function removeLoader() {
+        $(".bouncing-loader").remove();
+    }
+
+    function talk() {
+        const mouth = $(".mouth");
+        mouth.addClass("talking");
+    }
+
+    function noTalk() {
+        const mouth = $(".mouth");
+        mouth.removeClass("talking");
+    }
+
+    new Promise(function (res, rej) {
+        talk();
+        addBubble("Hi! I am Ankit, I am a web developer.");
+        setTimeout(res, 3000);
+    }).then(function () {
+        new Promise(function (res, rej) {
+            noTalk();
+            addLoader();
+            setTimeout(res, 3000);
+        }).then(function () {
+            new Promise(function (res, rej) {
+                removeLoader();
+                talk();
+                addBubble("And an aspiring designer.");
+                setTimeout(res, 3000);
+            }).then(function () {
+                new Promise(function (res, rej) {
+                    noTalk();
+                    addLoader();
+                    setTimeout(res, 3000);
+                }).then(function () {
+                    new Promise(function (res, rej) {
+                        removeLoader();
+                        talk();
+                        addBubble("Choose what you'd like to look at - ");
+                        setTimeout(res, 3000);
+                    }).then(function() {
+                        new Promise(function (res, rej) {
+                            noTalk();
+                            addLoader();
+                            setTimeout(res, 3000);
+                        }).then(function() {
+    
+                        }).catch(e => { });
+                    }).catch(e => { });
+                }).catch(e => { });
+            }).catch(e => { });
+        }).catch(e => { });
+    }).catch(e => { });
 
 });
