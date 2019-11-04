@@ -1,3 +1,4 @@
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./styles/main.styl";
 
 import $ from "jquery";
@@ -88,9 +89,11 @@ $(function () {
     }
 
     new Promise(function (res, rej) {
-        talk();
-        addBubble("Hi! I am Ankit, I am a web developer.");
-        setTimeout(res, 3000);
+        setTimeout(() => {
+            talk();
+            addBubble("Hi! I am Ankit, I am a web developer.");
+            res();
+        }, 3000);
     }).then(function () {
         new Promise(function (res, rej) {
             noTalk();
@@ -111,20 +114,39 @@ $(function () {
                     new Promise(function (res, rej) {
                         removeLoader();
                         talk();
-                        addBubble("Choose what you'd like to look at - ");
+                        addBubble("Do you want to check out my social media profiles?");
                         setTimeout(res, 3000);
-                    }).then(function() {
+                    }).then(function () {
                         new Promise(function (res, rej) {
                             noTalk();
                             addLoader();
                             setTimeout(res, 3000);
-                        }).then(function() {
-    
+                        }).then(function () {
+                            removeLoader();
+                            talk();
+                            $(".chat").append(`<div class="social-media">
+                                <a href="https://github.com/nktkarnany" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/nktkarnany" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://dribbble.com/nktkarnany" target="_blank">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                                <a href="https://medium.com/@nktkarnany" target="_blank">
+                                    <i class="fab fa-medium"></i>
+                                </a>
+                            </div>`);
                         }).catch(e => { });
                     }).catch(e => { });
                 }).catch(e => { });
             }).catch(e => { });
         }).catch(e => { });
     }).catch(e => { });
+
+    $(".resume").click(function(e) {
+        window.open("https://drive.google.com/open?id=19Y6g-ry0OJPE7fsESYKQnMRkXzpP57YX", "_blank");
+    });
 
 });
