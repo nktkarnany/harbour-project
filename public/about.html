@@ -16,27 +16,23 @@
 		<section class="main-section">
 
 			<section class="main-content">
-				<div class="chat">
-					<div class="persona">
-						<img src="../src/assets/boy.svg" alt="">
-						<div class="mouth"></div>
-					</div>
-
-					<!-- <div class="social-media">
-						<a href="https://github.com/nktkarnany" target="_blank">
-							<i class="fab fa-github"></i>
-						</a>
-						<a href="https://www.linkedin.com/in/nktkarnany" target="_blank">
-							<i class="fab fa-linkedin"></i>
-						</a>
-						<a href="https://dribbble.com/nktkarnany" target="_blank">
-							<i class="fab fa-dribbble"></i>
-						</a>
-						<a href="https://medium.com/@nktkarnany" target="_blank">
-							<i class="fab fa-medium"></i>
-						</a>
-					</div> -->
-				</div>
+                <form name="contact" method="POST" data-netlify="true">
+                    <p>
+                        <label>Your Name: <input type="text" name="name" /></label>   
+                    </p>
+                    <p>
+                        <label>Your Email: <input type="email" name="email" /></label>
+                    </p>
+                    <p>
+                        <label>Your Phone: <input type="number" name="phone" /></label>
+                    </p>
+                    <p>
+                        <label>Message: <textarea name="message"></textarea></label>
+                    </p>
+                    <p>
+                        <button type="submit">Send</button>
+                    </p>
+                </form>
 			</section>
 
 			<section class="main-menu">
