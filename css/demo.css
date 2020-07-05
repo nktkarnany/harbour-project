@@ -198,6 +198,11 @@
 		background-size: 100% auto;
 		background-position: 50% 100%;
 		background-color: currentColor;
+		transition: transform .5s;
+	}
+
+	.grim__item-scale {
+		transform: scale(1.2);
 	}
 
 	.grim__item-img--1 { color: #fcfdff; }
@@ -208,14 +213,13 @@
 
 	.grim__item-content {
 		position: relative;
-		color: #000;
+		color: #fff;
 		overflow: hidden;
 	}
 
 	.grim__item-content:hover,
 	.grim__item-content:focus {
 		opacity: 0.8;
-		color: inherit;
 		transition: opacity 0.3s;
 	}
 
