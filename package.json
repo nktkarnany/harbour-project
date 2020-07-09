@@ -1,0 +1,23 @@
+{
+  "name": "harbour-project",
+  "version": "1.0.0",
+  "description": "- A CSS Grid powered menu with a box look inspired by the effect seen in the [Ableton Live 10: What's New](https://www.youtube.com/watch?v=Z9Ku5ptjzKw) video. - Images by [Unsplash.com](http://unsplash.com) - [anime.js](http://anime-js.com/) by Julian Garnier - [imagesLoaded](http://imagesloaded.desandro.com/) by Dave DeSandro - [Cody House](https://github.com/CodyHouse/codyhouse-framework)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node-sass --watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nktkarnany/harbour-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nktkarnany/harbour-project/issues"
+  },
+  "homepage": "https://github.com/nktkarnany/harbour-project#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

@@ -153,19 +153,19 @@
 
             this.close();
           });
-		}
-		const img = this.boxes[i].DOM.img;
-		const content = this.boxes[i].DOM.content;
-		if (content) {
-			content.addEventListener("mouseenter", ev => {
-				ev.preventDefault();
-				img.classList.add("grim__item-scale");
-			});
-			content.addEventListener("mouseleave", ev => {
-				ev.preventDefault();
-				img.classList.remove("grim__item-scale");
-			});
-		}
+        }
+        const img = this.boxes[i].DOM.img;
+        const content = this.boxes[i].DOM.content;
+        if (content) {
+          content.addEventListener("mouseenter", (ev) => {
+            ev.preventDefault();
+            img.classList.add("grim__item-scale");
+          });
+          content.addEventListener("mouseleave", (ev) => {
+            ev.preventDefault();
+            img.classList.remove("grim__item-scale");
+          });
+        }
       }
     }
     open() {
