@@ -63,27 +63,27 @@
 }
 
 #content-1 {
-	background-image: url(../img/bg.jpg);
+	/* background-image: url(../img/bg.jpg); */
 }
 
 #content-2 {
-	background-image: url(../img/bg1.jpg);
+	/* background-image: url(../img/bg1.jpg); */
 }
 
 #content-3 {
-	background-image: url(../img/bg2.jpg);
+	/* background-image: url(../img/bg2.jpg); */
 }
 
 #content-4 {
-	background-image: url(../img/bg3.jpg);
+	/* background-image: url(../img/bg3.jpg); */
 }
 
 #content-5 {
-	background-image: url(../img/bg4.jpg);
+	/* background-image: url(../img/bg4.jpg); */
 }
 
 #content-6 {
-	background-image: url(../img/bg5.jpg);
+	/* background-image: url(../img/bg5.jpg); */
 }
 
 @media screen and (min-width: 55em) {
@@ -163,6 +163,10 @@
 		grid-area: 9 / 1 / 17 / 9;
 	}
 
+	.grim--open .grim__item:nth-child(7) {
+		grid-area: 1 / 1 / 17 / 9;
+	}
+
 	.grim__item:nth-child(8) {
 		grid-area: 1 / 9 / 17 / 17;
 	}
@@ -208,6 +212,13 @@
 	.grim__item-bg--7 {
 		color: #fee440;
 	}
+	.grim__item-bg--7.grim__item-bg-cover {
+		display: block;
+	}
+	.grim--open .grim__item-bg--7.grim__item-bg-cover {
+		display: none;
+	}
+
 	.grim__item-bg--8 {
 		color: #f15bb5;
 	}
@@ -224,24 +235,71 @@
 		height: 100%;
 		opacity: 0;
 		background-repeat: no-repeat;
-		background-size: 100% auto;
+		background-size: contain;
 		background-position: 50% 100%;
 		transition: transform 0.5s;
+		z-index: 1;
 	}
 
-	.grim__item-scale {
-		transform: scale(1.2);
+	.grim__item-img--3 {
+		transform: translate(-30%, 15%) scale(0.75);
+	}
+
+	.grim__item-img--3.grim__item-scale {
+		transform: translate(-10%, 5%) scale(1);
+	}
+
+	.grim__item-img--4 {
+		transform: translate(-30%, 15%) scale(0.75);
+	}
+
+	.grim__item-img--4.grim__item-scale {
+		transform: translate(-25%, 0) scale(1);
+	}
+
+	.grim__item-img--5 {
+		transform: translate(-50px, -100px) scale(1.2);
+	}
+
+	.grim__item-img--5.grim__item-scale {
+		transform: translate(-100px, -150px) scale(1.5);
 	}
 
 	.grim__item-content {
 		position: relative;
 		color: #fff;
+		height: 100%;
+		transition: background-color 0.5s;
 		overflow: hidden;
+	}
+
+	a[href="#content-3"] {
+		display: none;
+	}
+
+	.grim--open a[href="#content-3"] {
+		display: block;
+	}
+
+	a[href="#content-3"] .grim__item-title {
+		font-size: 3rem;
+		text-transform: initial;
+	}
+
+	a[href="#content-4"]:hover {
+		background-color: black;
+	}
+
+	a[href="#content-5"]:hover {
+		background-color: black;
+	}
+
+	a[href="#content-6"]:hover {
+		background-color: black;
 	}
 
 	.grim__item-content:hover,
 	.grim__item-content:focus {
-		opacity: 0.8;
 		transition: opacity 0.3s;
 	}
 

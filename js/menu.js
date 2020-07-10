@@ -52,19 +52,77 @@
               });
             }
 
-            if (this.DOM.inner) {
-              anime.remove(this.DOM.inner);
-              anime({
-                targets: this.DOM.inner,
-                duration: 1200,
-                delay: 150,
-                easing: "easeOutQuint",
-                opacity: {
-                  value: 1,
-                  duration: 1,
-                },
-                translateY: ["100%", "0%"],
-              });
+            if (this.DOM.content && this.DOM.content.hasAttribute("href")) {
+              switch (this.DOM.content.getAttribute("href")) {
+                case "#content-3":
+                  if (this.DOM.inner) {
+                    anime.remove(this.DOM.inner);
+                    anime({
+                      targets: this.DOM.inner,
+                      duration: 1200,
+                      delay: 150,
+                      easing: "easeOutQuint",
+                      opacity: {
+                        value: 1,
+                        duration: 1,
+                      },
+                      translateY: ["100%", "35%"],
+                    });
+                  }
+                  break;
+                case "#content-4":
+                  if (this.DOM.inner) {
+                    anime.remove(this.DOM.inner);
+                    anime({
+                      targets: this.DOM.inner,
+                      duration: 1200,
+                      delay: 150,
+                      easing: "easeOutQuint",
+                      opacity: {
+                        value: 1,
+                        duration: 1,
+                      },
+                      scale: 0.3,
+                      translateX: "5%",
+                      translateY: ["100%", "100%"],
+                    });
+                  }
+                  break;
+                case "#content-5":
+                  if (this.DOM.inner) {
+                    anime.remove(this.DOM.inner);
+                    anime({
+                      targets: this.DOM.inner,
+                      duration: 1200,
+                      delay: 150,
+                      easing: "easeOutQuint",
+                      opacity: {
+                        value: 1,
+                        duration: 1,
+                      },
+                      scale: 0.8,
+                      translateX: "30%",
+                      translateY: ["100%", "20%"],
+                    });
+                  }
+                  break;
+                case "#content-6":
+                  if (this.DOM.inner) {
+                    anime.remove(this.DOM.inner);
+                    anime({
+                      targets: this.DOM.inner,
+                      duration: 1200,
+                      delay: 150,
+                      easing: "easeOutQuint",
+                      opacity: {
+                        value: 1,
+                        duration: 1,
+                      },
+                      translateY: ["100%", "30%"],
+                    });
+                  }
+                  break;
+              }
             }
 
             resolve();
