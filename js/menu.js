@@ -82,8 +82,6 @@
                         value: 1,
                         duration: 1,
                       },
-                      scale: 0.3,
-                      translateX: "5%",
                       translateY: ["100%", "100%"],
                     });
                   }
@@ -100,9 +98,7 @@
                         value: 1,
                         duration: 1,
                       },
-                      scale: 0.8,
-                      translateX: "30%",
-                      translateY: ["100%", "20%"],
+                      translateY: ["100%", "50%"],
                     });
                   }
                   break;
@@ -118,7 +114,7 @@
                         value: 1,
                         duration: 1,
                       },
-                      translateY: ["100%", "30%"],
+                      translateY: ["100%", "20%"],
                     });
                   }
                   break;

@@ -237,37 +237,40 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: 50% 100%;
-		transition: transform 0.5s;
+		transition: transform 0.5s ease-out;
 		z-index: 1;
 	}
 
 	.grim__item-img--3 {
-		transform: translate(-30%, 15%) scale(0.75);
-	}
-
-	.grim__item-img--3.grim__item-scale {
 		transform: translate(-10%, 5%) scale(1);
 	}
 
+	.grim__item-img--3.grim__item-scale {
+		transform: translate(-10%, 5%) scale(1.1);
+	}
+
 	.grim__item-img--4 {
-		transform: translate(-30%, 15%) scale(0.75);
+		transform: translate(-25%, 5%) scale(0.8);
 	}
 
 	.grim__item-img--4.grim__item-scale {
-		transform: translate(-25%, 0) scale(1);
+		transform: translate(-25%, 5%) scale(0.9);
 	}
 
 	.grim__item-img--5 {
-		transform: translate(-50px, -100px) scale(1.2);
+		transform-origin: bottom;
+		transform: translate(-100px, 0px) scale(1.45);
 	}
 
 	.grim__item-img--5.grim__item-scale {
-		transform: translate(-100px, -150px) scale(1.5);
+		transform-origin: bottom;
+		transform: translate(-100px, 0px) scale(1.5);
 	}
 
 	.grim__item-content {
 		position: relative;
 		color: #fff;
+		width: 100%;
 		height: 100%;
 		transition: background-color 0.5s;
 		overflow: hidden;
@@ -283,6 +286,22 @@
 
 	a[href="#content-3"] .grim__item-title {
 		font-size: 3rem;
+		text-transform: initial;
+	}
+
+	a[href="#content-4"] .grim__item-title {
+		font-size: 5rem;
+		text-transform: initial;
+	}
+
+	a[href="#content-5"] .grim__item-title {
+		font-size: 9rem;
+		text-transform: initial;
+		padding-left: 15rem;
+	}
+
+	a[href="#content-6"] .grim__item-title {
+		font-size: 13rem;
 		text-transform: initial;
 	}
 
@@ -317,7 +336,6 @@
 		font-weight: normal;
 		margin: 0;
 		font-family: "tex-bold", serif;
-		font-size: 197px;
 		line-height: 85.4%;
 		text-transform: capitalize;
 	}
