@@ -1,2 +1,96 @@
-* {
-  box-sizing: border-box; }
+.navbar {
+  padding: 6px 12px;
+  display: flex;
+  align-items: center; }
+
+.brand {
+  padding: 4px 0; }
+
+.toggle {
+  display: none;
+  padding: 20px 10px; }
+
+.nav-item {
+  order: 1;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; }
+
+.nav-item > .tab {
+  padding: 8px; }
+
+.nav-item .tab a {
+  text-decoration: none;
+  color: black; }
+
+.nav-item .tab a:hover {
+  color: red; }
+
+.show {
+  display: inline-block !important; }
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start; }
+  .toggle {
+    align-self: flex-end;
+    position: absolute;
+    display: initial; }
+  .nav-item {
+    flex-direction: column;
+    display: none; } }
+
+.study {
+  min-height: inherit;
+  padding: 4rem 6rem;
+  display: flex;
+  flex-direction: column; }
+  .study.tesla {
+    background-color: #00bbf9; }
+  .study-content {
+    flex: 1;
+    border: 1px solid white;
+    position: relative; }
+  .study .pin {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white; }
+    .study .pin:before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute; }
+    .study .pin.top {
+      top: 0; }
+      .study .pin.top.left {
+        transform: translate(-50%, -50%); }
+      .study .pin.top.right {
+        transform: translate(50%, -50%); }
+      .study .pin.top:before {
+        top: 10px; }
+    .study .pin.bottom {
+      bottom: 0; }
+      .study .pin.bottom.left {
+        transform: translate(-50%, 50%); }
+      .study .pin.bottom.right {
+        transform: translate(50%, 50%); }
+      .study .pin.bottom:before {
+        bottom: 10px; }
+    .study .pin.left {
+      left: 0; }
+      .study .pin.left:before {
+        left: 10px; }
+    .study .pin.right {
+      right: 0; }
+      .study .pin.right:before {
+        right: 10px; }
+  .study-content--inner {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column; }

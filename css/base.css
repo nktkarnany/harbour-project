@@ -143,13 +143,6 @@ main {
 
 .content {
 	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.content--switch {
-	padding: 2.5rem 1rem;
 }
 
 .demo--current {
@@ -167,7 +160,6 @@ main {
 	}
 
 	.content {
-		margin: 0 auto;
 		min-height: 100vh;
 	}
 

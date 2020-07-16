@@ -1,0 +1,135 @@
+.navbar {
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+}
+.brand {
+  padding: 4px 0;
+}
+.toggle {
+  display: none;
+  padding: 20px 10px;
+}
+.nav-item {
+  order: 1;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-item > .tab {
+  padding: 8px;
+}
+.nav-item .tab a {
+  text-decoration: none;
+  color: black;
+}
+.nav-item .tab a:hover {
+  color: red;
+}
+.show {
+  display: inline-block !important;
+}
+@media only screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .toggle {
+    align-self: flex-end;
+    position: absolute;
+    display: initial;
+  }
+  .nav-item {
+    flex-direction: column;
+    display: none;
+  }
+}
+
+.study {
+  min-height: inherit;
+  padding: 4rem 6rem;
+  display: flex;
+  flex-direction: column;
+
+  &.tesla {
+    background-color: $blue;
+  }
+
+  &-content {
+    flex: 1;
+    border: 1px solid white;
+    position: relative;
+  }
+
+  .pin {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+
+    &:before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    &.top {
+      top: 0;
+
+      &.left {
+        transform: translate(-50%, -50%);
+      }
+
+      &.right {
+        transform: translate(50%, -50%);
+      }
+
+      &:before {
+        top: 10px;
+      }
+    }
+
+    &.bottom {
+      bottom: 0;
+
+      &.left {
+        transform: translate(-50%, 50%);
+      }
+
+      &.right {
+        transform: translate(50%, 50%);
+      }
+
+      &:before {
+        bottom: 10px;
+      }
+    }
+
+    &.left {
+      left: 0;
+
+      &:before {
+        left: 10px;
+      }
+    }
+
+    &.right {
+      right: 0;
+
+      &:before {
+        right: 10px;
+      }
+    }
+  }
+
+  &-content--inner {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
